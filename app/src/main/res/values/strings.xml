@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SwapKu</string>
+    <string name="app_tagline">Swap wajah dari foto, di app sendiri, tanpa upload.</string>
+    <string name="licence_warning">PROTOTIPE — LISENSI BELUM CLEAR UNTUK DISTRIBUSI KOMERSIAL. Model inSwapper/ArcFace dari InsightFace hanya untuk riset non-komersial. Jangan jual atau bagikan APK ini secara komersial sebelum lisensi Ghost/HyperSwap terverifikasi atau lisensi komersial InsightFace diperoleh.</string>
+</resources>

@@ -1,0 +1,13 @@
+# SwapKu .gitignore
+# NEVER commit a keystore. The CI keystore lives only in the workflow
+# workspace at signing/swapku-tetap.keystore, decoded from secret
+# KEYSTORE_B64 at build time. It is ignored here on purpose.
+signing/
+*.jks
+*.keystore
+local.properties
+.gradle/
+build/
+app/build/
+*.iml
+.DS_Store

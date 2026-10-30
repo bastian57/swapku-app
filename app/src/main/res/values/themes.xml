@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SwapKu" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF4CAF50</item>
+        <item name="colorPrimaryDark">#FF121212</item>
+        <item name="colorAccent">#FF4CAF50</item>
+        <item name="android:windowBackground">#FF121212</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textColorHint">#FFAAAAAA</item>
+    </style>
+</resources>

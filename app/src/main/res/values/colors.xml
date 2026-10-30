@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="swapku_background">#FF121212</color>
+    <color name="swapku_surface">#FF1E1E1E</color>
+    <color name="swapku_text">#FFFFFFFF</color>
+    <color name="swapku_text_secondary">#FFCCCCCC</color>
+    <color name="swapku_accent">#FF4CAF50</color>
+    <color name="swapku_warning">#FFFFC107</color>
+    <color name="swapku_error">#FFFF6B6B</color>
+</resources>
