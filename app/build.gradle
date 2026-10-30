@@ -101,4 +101,12 @@ dependencies {
     // ONNX Runtime Android, full package (all ops), CPU-first.
     // Version 1.31.1 is the version seen in the research report on Maven Central.
     implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.31.1'
+
+    // FIX 2026-10-30 (build merah #1): themes.xml memakai parent
+    // Theme.Material3.DayNight.NoActionBar, yang BUKAN dari
+    // androidx.compose.material3, melainkan dari library View Material
+    // (com.google.android.material). Tanpa dependency ini AAPT gagal
+    // linking resources di :app:processDebugResources. Versi 1.12.0
+    // stabil untuk compileSdk 34.
+    implementation 'com.google.android.material:material:1.12.0'
 }
