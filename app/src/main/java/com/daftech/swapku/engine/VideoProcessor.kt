@@ -241,7 +241,9 @@ class VideoProcessor(
                     }
                     drainEncoder(encoder, muxer, bufferInfo, { muxerStarted }, { started -> muxerStarted = started }, { track -> videoTrack = track })
                     if (frame != swapped) {
-                        try { frame.recycle() } catch (_: Exception) { }
+                        // FIX 2026-10-30 (build merah #2): frame bertipe
+                        // Bitmap? (nullable), jadi panggil recycle() dengan ?.
+                        try { frame?.recycle() } catch (_: Exception) { }
                     }
                 }
                 // End of stream.

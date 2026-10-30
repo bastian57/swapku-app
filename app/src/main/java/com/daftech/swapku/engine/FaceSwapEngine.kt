@@ -170,7 +170,10 @@ class FaceSwapEngine(private val context: Context) {
             result.use { res ->
                 val outputName = info.outputNames.firstOrNull()
                     ?: throw IllegalStateException("Model ArcFace tidak punya output.")
-                val output = res.get(outputName)?.value
+                // FIX 2026-10-30 (build merah #2): OrtSession.Result.get()
+                // mengembalikan OnnxValue dasar, yang tidak punya .value.
+                // Cast dulu ke OnnxTensor, baru .value (getValue()) ada.
+                val output = (res.get(outputName) as? OnnxTensor)?.value
                 val flat: FloatArray = when (output) {
                     is Array<*> -> {
                         // Shape [1,512] comes back as Array<FloatArray>.
@@ -237,7 +240,9 @@ class FaceSwapEngine(private val context: Context) {
                 result.use { res ->
                     val outputName = info.outputNames.firstOrNull()
                         ?: throw IllegalStateException("Model inSwapper tidak punya output.")
-                    val output = res.get(outputName)?.value
+                    // FIX 2026-10-30 (build merah #2): sama seperti di atas,
+                // cast ke OnnxTensor dulu sebelum .value.
+                val output = (res.get(outputName) as? OnnxTensor)?.value
                     val outShape = info.outputShapes[outputName]
                     swappedCrop = when {
                         output is Array<*> && outShape == listOf(1L, 3L, 128L, 128L) -> {
